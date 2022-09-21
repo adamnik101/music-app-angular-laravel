@@ -1,5 +1,5 @@
-# ng-music-app
- Music app made with Angular and Laravel
+# Praktikum iz objektnog web programiranja - ISPIT
+ > Koriscene tehnologije Angular 14 i Laravel 8.1
 # Instrukcije
 
 > Otvoriti XAMPP i ukljuciti Apache i MySQL
