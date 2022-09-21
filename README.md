@@ -2,6 +2,15 @@
  > Koriscene tehnologije Angular 14 i Laravel 8.1
 # Instrukcije
 
+***Potrebno je unutar Backend-Laravel foldera pronaci fajl***
+
+>.env.example
+
+nakon toga obrisati ekstenziju ```.example``` tako da ostane samo ```.env```
+
+U tom fajlu podesi potrebne parametre poput portova i naziv baze podataka
+
+
 > Otvoriti XAMPP i ukljuciti Apache i MySQL
 > 
 > Otvoriti ```http://127.0.0.1/phpmyadmin/```
@@ -12,11 +21,16 @@
 
 3. Otvoriti 2 terminala
 
-6. U prvom terminalu 
-``cd Backend-Laravel``,
-zatim 
-``composer install``
-i nakon toga 
+6. U prvom terminalu pokrenuti komande
+
+``cd Backend-Laravel``<br>
+ 
+``composer install``<br>
+
+``php artisan key:generate``<br>
+
+``php artisan config:cache``<br>
+
 ``php artisan serve --port=8000``
 
 7. U drugom terminalu ``cd Frontend-Angular``, zatim ``npm install`` i nakon toga ``ng serve --open``<br>
