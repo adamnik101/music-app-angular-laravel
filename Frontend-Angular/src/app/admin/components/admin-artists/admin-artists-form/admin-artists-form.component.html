@@ -1,0 +1,54 @@
+<h3 style="margin-bottom: 15px">{{data ? "Edit artist" : "Add new artist"}}</h3>
+<mat-dialog-content>
+    <ng-container *ngIf="data"></ng-container>
+    <form [formGroup]="data ? edit : add">
+      <mat-form-field appearance="fill">
+        <mat-label>Artist name</mat-label>
+        <input matInput formControlName="name">
+        <mat-error>
+          <ng-container *ngIf="data">
+            <ng-container *ngIf="edit.get('name')?.hasError('required')">
+              Artist name is required.
+            </ng-container>
+          </ng-container>
+          <ng-container *ngIf="!data">
+            <ng-container *ngIf="add.get('name')?.hasError('required')">
+              Artist name is required.
+            </ng-container>
+          </ng-container>
+        </mat-error>
+      </mat-form-field>
+      <div class="input">
+        <ng-container *ngIf="data">
+          <p>Current image</p>
+          <img src="assets/images/artists/{{data.cover}}" alt="{{data.artist}}">
+        </ng-container>
+        <button type="button" mat-raised-button (click)="fileInput.click()">
+          <ng-container *ngIf="data">
+            Choose new cover image [Optional]
+          </ng-container>
+          <ng-container *ngIf="data == undefined">
+            Choose cover image
+          </ng-container>
+
+        </button>
+        <input hidden #fileInput (change)="onFileSelected($event)" type="file" formControlName="image" [accept]="ext">
+        <span class="file-name">{{selectedFile?.name}}</span>
+        <mat-error>
+          <ng-container *ngIf="!data">
+            <ng-container *ngIf="add.get('image')?.hasError('required')">
+              Image is required
+            </ng-container>
+          </ng-container>
+        </mat-error>
+      </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button (click)="data ? editArtist() : addArtist()">
+    {{data ? "Save" : "Add"}}
+  </button>
+  <button mat-raised-button (click)="cancel()">
+    Cancel
+  </button>
+</mat-dialog-actions>

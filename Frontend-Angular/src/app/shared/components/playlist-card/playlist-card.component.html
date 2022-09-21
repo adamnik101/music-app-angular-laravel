@@ -1,0 +1,24 @@
+<mat-card>
+  <ng-container *ngIf="!add">
+    <img mat-card-image src="assets/images/playlists/{{playlist.cover}}" alt="{{playlist.name}}">
+    <mat-card-content>
+      <mat-card-title>
+       <a routerLink="/playlists/{{playlist.id}}">{{playlist.name | truncate}}</a>
+      </mat-card-title>
+      <mat-card-subtitle>
+        Number of songs: {{playlist.tracks.length}}
+      </mat-card-subtitle>
+    </mat-card-content>
+  </ng-container>
+  <ng-container *ngIf="add">
+    <mat-card-content class="add">
+      <mat-card-title class="add-text">
+        <mat-icon>playlist_add</mat-icon>
+        <p>Create new playlist</p>
+      </mat-card-title>
+    </mat-card-content>
+  </ng-container>
+  <button type="button" (click)="playPlaylist(playlist.tracks)">
+    <mat-icon>play_arrow</mat-icon>
+  </button>
+</mat-card>

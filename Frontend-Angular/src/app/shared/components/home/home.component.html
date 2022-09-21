@@ -1,0 +1,25 @@
+<!--<app-header [title]="title[0]" [subtitle]="subtitle[0]"></app-header>-->
+<!--<div class="card-wrapper">-->
+<!--  <ng-container *ngFor="let track of tracks">-->
+<!--    <app-track-card [track]="track"></app-track-card>-->
+<!--  </ng-container>-->
+<!--</div>-->
+<app-header [title]="title[0]" [subtitle]="subtitle[0]"></app-header>
+<div class="card-wrapper">
+  <ng-container *ngFor="let playlist of playlists">
+    <app-playlist-card [playlist]="playlist"></app-playlist-card>
+  </ng-container>
+</div>
+<app-header [title]="title[2]" [subtitle]="subtitle[2]"></app-header>
+<div class="card-wrapper">
+  <ng-container *ngFor="let track of tracks">
+    <app-track-card [track]="track"></app-track-card>
+  </ng-container>
+</div>
+<app-header [title]="title[1]" [subtitle]="subtitle[1]"></app-header>
+<div class="card-wrapper">
+  <ng-container *ngFor="let artist of artists">
+    <app-artist-card [artist]="artist"></app-artist-card>
+  </ng-container>
+</div>
+

@@ -1,0 +1,78 @@
+<h3 style="margin-bottom: 15px">{{data ? "Edit track" : "Add new track"}}</h3>
+<mat-dialog-content>
+  <ng-container *ngIf="data"></ng-container>
+  <form [formGroup]="data ? edit : add">
+    <mat-form-field appearance="fill">
+      <mat-label>Track title</mat-label>
+      <input matInput formControlName="name">
+      <mat-error>
+        <ng-container *ngIf="data">
+          <ng-container *ngIf="edit.get('name')?.hasError('required')">
+            Track title is required.
+          </ng-container>
+        </ng-container>
+        <ng-container *ngIf="!data">
+          <ng-container *ngIf="add.get('name')?.hasError('required')">
+            Track title is required.
+          </ng-container>
+        </ng-container>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Select artist</mat-label>
+        <mat-select #select [value]="track  ? (track | owner) : ''" (selectionChange)="onChange(select.value)" formControlName="owner">
+          <mat-option *ngFor="let artist of artists" [value]="artist.artist">
+            {{artist.artist}}
+          </mat-option>
+        </mat-select>
+      <ng-container *ngIf="!data">
+        <ng-container *ngIf="add.get('owner')?.hasError('required')">
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="data">
+        <ng-container *ngIf="edit.get('owner')?.hasError('required')">
+        </ng-container>
+      </ng-container>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Select features [Optional]</mat-label>
+        <mat-select #select multiple [value]="track ? (track.artists | featuresId) : ''" (selectionChange)="onChange(select.value)" formControlName="features">
+          <mat-option *ngFor="let artist of artists" [value]="artist.id">
+            {{artist.artist}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="input">
+      <ng-container *ngIf="data">
+        <p>Current mp3 file</p>
+        <p>{{data.src}}</p>
+      </ng-container>
+      <button type="button" mat-raised-button (click)="fileInput.click()">
+        <ng-container *ngIf="data">
+          Choose new mp3 file [Optional]
+        </ng-container>
+        <ng-container *ngIf="data == undefined">
+          Choose mp3 file
+        </ng-container>
+
+      </button>
+      <input hidden #fileInput (change)="onFileSelected($event)" type="file" formControlName="track" [accept]="ext">
+      <span class="file-name">{{selectedFile?.name}}</span>
+      <mat-error>
+        <ng-container *ngIf="!data">
+          <ng-container *ngIf="add.get('track')?.hasError('required')">
+            Track file is required
+          </ng-container>
+        </ng-container>
+      </mat-error>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button (click)="data ? editTrack() : addTrack()" [disabled]="data ? !edit.valid : !add.valid">
+    {{data ? "Save" : "Add"}}
+  </button>
+  <button mat-raised-button (click)="cancel()">
+    Cancel
+  </button>
+</mat-dialog-actions>

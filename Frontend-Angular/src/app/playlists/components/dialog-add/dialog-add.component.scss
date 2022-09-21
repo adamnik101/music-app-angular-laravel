@@ -1,0 +1,10 @@
+.content{
+  display: flex;
+  flex-direction: column;
+  .input{
+    margin-bottom: 1vw;
+    .file-name{
+      margin-left: 1vw;
+    }
+  }
+}

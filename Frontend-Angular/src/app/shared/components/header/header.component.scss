@@ -1,0 +1,131 @@
+.header{
+  margin-bottom: 1vw;
+  padding:  0 1vw 1vw;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  .divider{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 98%;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+  }
+  img{
+    height: 250px;
+    margin-right: 20px;
+    box-shadow: rgb(0 0 0 / 25%) 0 14px 28px, rgb(0 0 0 / 22%) 0 10px 10px;
+  }
+  h1{
+    font-size: 3vw;
+    color: white;
+    text-shadow: 2px 2px 5px #1f1f1f;
+    margin: 0;
+  }
+  span{
+    display: block;
+    margin-top: .5vw;
+    color: white !important;
+    font-size: .9vw;
+  }
+  a{
+    color: white;
+  }
+  .album{
+    text-shadow: 2px 2px 5px #1f1f1f;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    p{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      a{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      img{
+        box-shadow: 2px 2px 5px #1f1f1f;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .header{
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    margin-bottom: 2vw;
+    .divider{
+      width: 98%;
+    }
+    h1{
+      font-size: 3vw;
+    }
+    span{
+      font-size: 2vw;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .header{
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    margin-bottom: 2vw;
+    .album{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .divider{
+      width: 98%;
+    }
+    h1{
+      font-size: 3.5vw;
+    }
+    span{
+      font-size: 2vw;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .header{
+    padding-top: 3vw;
+    padding-bottom: 2vw;
+    margin-bottom: 2vw;
+    .album{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .divider{
+      width: 98%;
+    }
+    h1{
+      font-size: 5vw;
+    }
+    span{
+      font-size: 2vw;
+    }
+  }
+}
+@media screen and (max-width: 420px) {
+  .header{
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+    margin-bottom: 3vw;
+    .divider{
+      width: 98%;
+    }
+    h1{
+      font-size: 6vw;
+    }
+    span{
+      font-size: 3.5vw;
+    }
+  }
+}

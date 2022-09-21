@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>
+  Warning
+</h1>
+<mat-dialog-content>
+  <p>Are you sure you want to delete {{data.artist ? data.artist : data.name}}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button (click)="confirm(data)">Yes</button>
+  <button mat-raised-button (click)="cancel()">No</button>
+</mat-dialog-actions>
+
+

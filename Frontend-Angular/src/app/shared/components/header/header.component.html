@@ -1,0 +1,39 @@
+<div class="header">
+  <div>
+    <h1>{{title}}</h1>
+    <span>{{subtitle}}</span>
+<!--    <ng-container *ngIf="artist.id">-->
+<!--      <a routerLink="/artists/{{artist.id}}"><span>By {{artist.name}}</span></a>-->
+<!--    </ng-container>-->
+  </div>
+  <ng-container *ngIf="artist?.id">
+    <div class="album">
+      <img src="assets/images/artists/{{artist.cover}}" alt="{{artist.cover}}">
+      <div class="info">
+        <p>Artist</p>
+        <h1>{{artist.artist}}</h1>
+      </div>
+
+    </div>
+  </ng-container>
+  <ng-container *ngIf="playlist?.id">
+    <div class="album">
+      <img src="assets/images/playlists/{{playlist.cover}}" alt="{{playlist.cover}}">
+      <div class="info" style="word-break: break-all">
+        <p>Playlist</p>
+        <h1 >{{playlist.name}}
+          <ng-container *ngIf="playlist.user.id == authService.userId" >
+            <button mat-mini-fab (click)="changePlaylistName(playlist)">
+              <mat-icon>
+                edit
+              </mat-icon>
+            </button>
+          </ng-container>
+        </h1>
+        <p>Number of songs: {{playlist.tracks.length}}</p>
+      </div>
+
+    </div>
+  </ng-container>
+  <div class="divider"></div>
+</div>

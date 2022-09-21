@@ -1,0 +1,24 @@
+mat-form-field{
+  width: 100%;
+  .input{
+    width: 100%;
+  }
+}
+.input{
+  margin-bottom: 1vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  p{
+    margin-bottom: 1vw;
+  }
+  .file-name{
+    margin-left: 1vw;
+  }
+}
+mat-form-field{
+  margin-bottom: 20px;
+}
+button{
+  margin-bottom: 15px;
+}

@@ -1,0 +1,55 @@
+<div class="navigation">
+  <p>MENU</p>
+  <mat-nav-list>
+    <ng-container *ngIf="!authService.isLoggedIn">
+      <mat-list-item>
+        <a matLine routerLink="/login" routerLinkActive="active"><mat-icon>login</mat-icon>Login</a>
+      </mat-list-item>
+    </ng-container>
+    <ng-container *ngIf="authService.isLoggedIn">
+      <mat-list-item>
+        <a matLine (click)="logout()"><mat-icon>logout</mat-icon>Log out</a>
+      </mat-list-item>
+    </ng-container>
+    <ng-container *ngIf="authService.user.role_id == 1 && authService.isLoggedIn">
+      <mat-list-item>
+        <a matLine  (click)="opened = !opened">
+          <mat-icon>admin_panel_settings</mat-icon> Admin
+        </a>
+      </mat-list-item>
+      <div [class.show]="opened" [class.close]="!opened">
+        <mat-list-item class="indent">
+          <a matLine routerLink="/admin/tracks" routerLinkActive="active">
+            <mat-icon>subdirectory_arrow_right</mat-icon>
+            <span>Tracks</span>
+          </a>
+        </mat-list-item>
+        <mat-list-item class="indent">
+          <a matLine routerLink="/admin/artists" routerLinkActive="active">
+            <mat-icon>subdirectory_arrow_right</mat-icon>
+            <span>Artists</span>
+          </a>
+        </mat-list-item>
+
+      </div>
+    </ng-container>
+
+    <mat-list-item>
+      <a matLine routerLink="/home" routerLinkActive="active"><mat-icon>home</mat-icon>Home</a>
+    </mat-list-item>
+    <mat-list-item>
+      <a matLine routerLink="/artists" routerLinkActive="active"><mat-icon>group</mat-icon>Artists</a>
+    </mat-list-item>
+    <ng-container *ngIf="authService.isLoggedIn">
+      <mat-list-item>
+        <a mat-line routerLink="/playlists" routerLinkActive="active"><mat-icon>library_music</mat-icon>My playlists</a>
+      </mat-list-item>
+    </ng-container>
+    <mat-list-item>
+      <a matLine routerLink="/contact" routerLinkActive="active"><mat-icon>message</mat-icon>Contact</a>
+    </mat-list-item>
+    <mat-list-item>
+      <a matLine routerLink="/author" routerLinkActive="active"><mat-icon>person</mat-icon>Author</a>
+    </mat-list-item>
+  </mat-nav-list>
+</div>

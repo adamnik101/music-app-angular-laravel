@@ -1,0 +1,21 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav opened mode="side">
+    <app-logo></app-logo>
+    <app-navigation></app-navigation>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="mat-elevation-z8" *ngIf="sidenav.mode == 'over'" >
+      <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+          menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+          close
+        </mat-icon>
+      </button>
+      <app-logo></app-logo>
+    </mat-toolbar>
+    <router-outlet> </router-outlet>
+    <app-player></app-player>
+  </mat-sidenav-content>
+</mat-sidenav-container>

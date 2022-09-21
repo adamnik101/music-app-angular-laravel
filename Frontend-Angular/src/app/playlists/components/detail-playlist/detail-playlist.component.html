@@ -1,0 +1,23 @@
+<app-header [playlist]="playlist"></app-header>
+
+<ng-container *ngIf="authService.userId == playlist?.user?.id && playlist?.tracks?.length || 0">
+  <button mat-raised-button (click)="openAddDialog()">
+    <mat-icon>
+      playlist_add
+    </mat-icon>
+     Add songs</button>
+</ng-container>
+<ng-container *ngIf="playlist?.tracks?.length || 0">
+  <app-track-table [playlist]="playlist" [user]="playlist.user.id" [tracks]="playlist.tracks" [owners]="artists"></app-track-table>
+</ng-container>
+<ng-container *ngIf="!playlist?.tracks?.length || 0">
+  <div class="no-results">
+    <h5>It's a bit empty here...</h5>
+    <p>Add some songs first to get you started</p>
+    <button mat-fab (click)="openAddDialog()">
+      <mat-icon>
+        playlist_add
+      </mat-icon>
+    </button>
+  </div>
+</ng-container>

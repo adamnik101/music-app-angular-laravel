@@ -1,0 +1,8 @@
+<app-header [artist]="artist"></app-header>
+<ng-container *ngIf="tracks.length">
+  <app-track-table [tracks]="tracks" [owners]="[artist]"></app-track-table>
+</ng-container>
+<ng-container *ngIf="!tracks.length">
+  Sorry, this artist has no song added yet..
+</ng-container>
+

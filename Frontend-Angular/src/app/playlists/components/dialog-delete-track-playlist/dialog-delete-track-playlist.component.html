@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>
+  Warning
+</h1>
+<mat-dialog-content>
+  <p>Are you sure you want to delete '{{data.track.name}} by {{data.track.artists | artist : data.track : data.track.artists}}' from your playlist?</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button (click)="delete()">Yes</button>
+  <button mat-raised-button (click)="cancel()">No</button>
+</mat-dialog-actions>

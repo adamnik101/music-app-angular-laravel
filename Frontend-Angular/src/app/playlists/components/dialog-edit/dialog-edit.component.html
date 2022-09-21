@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>
+  Change playlist name
+</h1>
+<mat-dialog-content>
+  <form [formGroup]="formData">
+    <mat-form-field appearance="fill">
+      <mat-label>Current name: {{data.name}}</mat-label>
+      <input matInput placeholder="New name" formControlName="name">
+      <mat-error>
+        <ng-container *ngIf="formData.get('name')?.hasError('required')">
+          Name is required.
+        </ng-container>
+        <ng-container *ngIf="formData.get('name')?.hasError('minlength')">
+          Name is required.
+        </ng-container>
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button (click)="cancel()">
+    Cancel
+  </button>
+  <button mat-raised-button (click)="save()">
+    Save
+  </button>
+</mat-dialog-actions>

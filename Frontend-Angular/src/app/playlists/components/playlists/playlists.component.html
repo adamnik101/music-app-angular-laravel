@@ -1,0 +1,16 @@
+<app-header [title]="title" [subtitle]="subtitle"></app-header>
+<div class="playlists">
+  <div class="add">
+    <button mat-raised-button (click)="openAddDialog()">
+      <mat-icon>library_add</mat-icon>
+      Add new playlist</button>
+  </div>
+  <div class="playlists-wrapper" *ngFor="let playlist of playlists">
+    <button mat-mini-fab (click)="openDeleteDialog(playlist)" class="delete">
+      <mat-icon>
+        delete
+      </mat-icon>
+    </button>
+    <app-playlist-card [playlist]="playlist"></app-playlist-card>
+  </div>
+</div>

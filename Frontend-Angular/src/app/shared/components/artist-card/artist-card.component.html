@@ -1,0 +1,14 @@
+<mat-card>
+  <img mat-card-image src="assets/images/artists/{{artist.cover}}" alt="{{artist.artist}}">
+  <mat-card-content>
+    <mat-card-title>
+      <a routerLink="/artists/{{artist.id}}">{{artist.artist | truncate}}</a>
+    </mat-card-title>
+    <mat-card-subtitle>
+      Number of songs: {{artist.tracks.length}}
+    </mat-card-subtitle>
+  </mat-card-content>
+<!--  <button type="button" (click)="playTrack(track)">-->
+<!--    <mat-icon>play_arrow</mat-icon>-->
+<!--  </button>-->
+</mat-card>

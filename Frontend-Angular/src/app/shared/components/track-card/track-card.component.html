@@ -1,0 +1,15 @@
+<mat-card>
+  <img mat-card-image src="assets/images/artists/{{track.artists[0].cover}}" alt="{{track.name}}">
+  <mat-card-content>
+    <mat-card-title>
+      {{track.name | truncate}}
+    </mat-card-title>
+    <mat-card-subtitle class="subtitle">
+      <p>{{track | owner }}</p>
+      <p class="plays"><span>{{track.plays | number}}</span> times played</p>
+    </mat-card-subtitle>
+  </mat-card-content>
+  <button type="button" (click)="playTrack(track)">
+    <mat-icon>play_arrow</mat-icon>
+  </button>
+</mat-card>
