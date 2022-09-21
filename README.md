@@ -21,7 +21,7 @@ U tom fajlu podesi potrebne parametre poput portova i naziv baze podataka
 
 3. Otvoriti 2 terminala
 
-6. U prvom terminalu pokrenuti komande
+> U prvom terminalu pokrenuti komande
 
 ``cd Backend-Laravel``<br>
  
@@ -33,7 +33,13 @@ U tom fajlu podesi potrebne parametre poput portova i naziv baze podataka
 
 ``php artisan serve --port=8000``
 
-7. U drugom terminalu ``cd Frontend-Angular``, zatim ``npm install`` i nakon toga ``ng serve --open``<br>
+> U drugom terminalu pokrenuti komande
+
+``cd Frontend-Angular``<br>
+
+``npm install``<br>
+
+``ng serve --open``
 
 >***Potrebno je pokrenuti na :4200***<br>
 
