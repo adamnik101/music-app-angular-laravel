@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2022 at 10:58 AM
+-- Generation Time: Sep 21, 2022 at 08:07 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -53,19 +53,6 @@ INSERT INTO `artists` (`id`, `artist`, `cover`, `created_at`, `updated_at`) VALU
 (16, 'Sting', '1663737199_sting.jpg', '2022-09-21 03:13:19', '2022-09-21 03:13:19'),
 (17, 'Kylie Minogue', '1663737407_Fever_US_Edition.jpg', '2022-09-21 03:16:47', '2022-09-21 03:16:47'),
 (18, 'Dxrk', '1663746344_7948e0ed-4e0b-463a-b688-5d98cadb32a3.jpg', '2022-09-21 05:45:44', '2022-09-21 05:45:44');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `liked_tracks`
---
-
-CREATE TABLE `liked_tracks` (
-  `id` int(10) NOT NULL,
-  `track_id` int(10) NOT NULL,
-  `user_id` int(10) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -169,19 +156,19 @@ CREATE TABLE `tracks` (
 --
 
 INSERT INTO `tracks` (`id`, `name`, `src`, `explicit`, `plays`, `created_at`, `updated_at`) VALUES
-(4, 'Can\'t say', '1663746382_Travis Scott - CAN\'T SAY.mp3', 1, 51351662, '2022-09-14 21:31:45', '2022-09-21 06:29:09'),
-(5, 'Wake up', 'Travis Scott - WAKE UP (Audio).mp3', 0, 8, '2022-09-14 21:31:45', '2022-09-21 06:45:17'),
-(6, 'Midnight City', 'Midnight City m83 (Audio).mp3', 0, 9, '2022-09-14 21:31:45', '2022-09-21 06:45:16'),
-(13, 'Passat', '1663734675_Passat.mp3', 0, 6, '2022-09-21 04:31:15', '2022-09-21 06:41:20'),
-(18, 'Mood', '1663737047_Makar - Mood (Prod. Ryder&Seno X KNGZ) (1).mp3', 0, 6, '2022-09-21 05:10:47', '2022-09-21 06:45:14'),
-(19, 'Careless Whisper', '1663737080_George Michael - Careless Whisper (Official Video).mp3', 0, 5, '2022-09-21 05:11:20', '2022-09-21 06:44:48'),
-(20, 'Total Eclipse of the Heart', '1663737109_Bonnie Tyler - Total Eclipse of the Heart (Video).mp3', 0, 1, '2022-09-21 05:11:50', '2022-09-21 06:44:44'),
-(21, 'Lady', '1663737136_Modjo - Lady (Hear Me Tonight) (Official Video).mp3', 0, 6, '2022-09-21 05:12:16', '2022-09-21 06:31:28'),
-(22, 'Shape of my Heart', '1663737242_Sting - Shape of My Heart (Leon).mp3', 0, 9, '2022-09-21 05:14:02', '2022-09-21 06:53:08'),
-(23, 'Can\'t Get You Out Of My Head', '1663737453_Kylie Minogue - Can\'t Get You Out Of My Head (Official Video).mp3', 0, 12, '2022-09-21 05:17:33', '2022-09-21 06:53:00'),
+(4, 'Can\'t say', '1663746382_Travis Scott - CAN\'T SAY.mp3', 1, 51351673, '2022-09-14 21:31:45', '2022-09-21 15:42:27'),
+(5, 'Wake up', 'Travis Scott - WAKE UP (Audio).mp3', 0, 17, '2022-09-14 21:31:45', '2022-09-21 16:06:57'),
+(6, 'Midnight City', 'Midnight City m83 (Audio).mp3', 0, 12, '2022-09-14 21:31:45', '2022-09-21 15:40:30'),
+(13, 'Passat', '1663734675_Passat.mp3', 0, 14, '2022-09-21 04:31:15', '2022-09-21 15:42:29'),
+(18, 'Mood', '1663737047_Makar - Mood (Prod. Ryder&Seno X KNGZ) (1).mp3', 0, 10, '2022-09-21 05:10:47', '2022-09-21 15:39:22'),
+(19, 'Careless Whisper', '1663737080_George Michael - Careless Whisper (Official Video).mp3', 0, 9, '2022-09-21 05:11:20', '2022-09-21 15:42:39'),
+(20, 'Total Eclipse of the Heart', '1663737109_Bonnie Tyler - Total Eclipse of the Heart (Video).mp3', 0, 4, '2022-09-21 05:11:50', '2022-09-21 15:40:19'),
+(21, 'Lady', '1663737136_Modjo - Lady (Hear Me Tonight) (Official Video).mp3', 0, 7, '2022-09-21 05:12:16', '2022-09-21 15:14:41'),
+(22, 'Shape of my Heart', '1663737242_Sting - Shape of My Heart (Leon).mp3', 0, 21, '2022-09-21 05:14:02', '2022-09-21 15:44:16'),
+(23, 'Can\'t Get You Out Of My Head', '1663737453_Kylie Minogue - Can\'t Get You Out Of My Head (Official Video).mp3', 0, 34, '2022-09-21 05:17:33', '2022-09-21 15:44:14'),
 (24, 'No Idea', '1663743985_Don Toliver - No Idea [Official Music Video].mp3', 0, 0, '2022-09-21 07:06:25', '2022-09-21 07:06:25'),
-(25, 'Still Cold', '1663744002_Night Lovell - Still Cold _ Liberty Walk GTR Performance.mp3', 0, 1, '2022-09-21 07:06:42', '2022-09-21 05:34:30'),
-(27, 'Rave', '1663746365_RAVE.mp3', 0, 3, '2022-09-21 07:46:05', '2022-09-21 06:40:00');
+(25, 'Still Cold', '1663744002_Night Lovell - Still Cold _ Liberty Walk GTR Performance.mp3', 0, 2, '2022-09-21 07:06:42', '2022-09-21 15:39:18'),
+(27, 'Rave', '1663746365_RAVE.mp3', 0, 23, '2022-09-21 07:46:05', '2022-09-21 15:44:09');
 
 -- --------------------------------------------------------
 
@@ -236,8 +223,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `mail`, `pw`, `active`, `role_id`) VALUES
-(1, 'Adam Nikolic', 'adamnikk101@gmail.com', '1a1dc91c907325c69271ddf0c944bc72', 1, 1),
-(2, 'Teodora Pesic', 'tea1d@gmail.com', '7239ea2b5dc943f61f3c0a0276c20974', 1, 2);
+(1, 'Adam Nikolic', 'admin@gmail.com', '1a1dc91c907325c69271ddf0c944bc72', 1, 1),
+(2, 'Adam Nikolic', 'user@gmail.com', '1a1dc91c907325c69271ddf0c944bc72', 1, 2);
 
 --
 -- Indexes for dumped tables
@@ -248,14 +235,6 @@ INSERT INTO `users` (`id`, `name`, `mail`, `pw`, `active`, `role_id`) VALUES
 --
 ALTER TABLE `artists`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `liked_tracks`
---
-ALTER TABLE `liked_tracks`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `track_id` (`track_id`),
-  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `playlist`
@@ -310,12 +289,6 @@ ALTER TABLE `artists`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `liked_tracks`
---
-ALTER TABLE `liked_tracks`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `playlist`
 --
 ALTER TABLE `playlist`
@@ -354,13 +327,6 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `liked_tracks`
---
-ALTER TABLE `liked_tracks`
-  ADD CONSTRAINT `liked_tracks_ibfk_1` FOREIGN KEY (`track_id`) REFERENCES `tracks` (`id`),
-  ADD CONSTRAINT `liked_tracks_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `playlist`

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {ITrack} from "../../tracks/interfaces/i-track";
 import {PlayedService} from "./played.service";
+import {IArtist} from "../../artists/interfaces/i-artist";
+import {IPlaylist} from "../../playlists/interfaces/i-playlist";
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,7 @@ export class PlayerService {
   public playing: boolean = false
   public track : ITrack = {} as ITrack
   public audio: HTMLAudioElement = new Audio()
+  public artist?: IArtist
   public queue: ITrack[] = []
   public queuePosition: number = 0
   public duration: number = 0
@@ -20,7 +23,20 @@ export class PlayerService {
     const path: string = 'assets/tracks/'
     this.track = track
     this.audio.src = path + track.src
+
     this.startPlaying()
+  }
+  playArtist(artist : IArtist) {
+    this.artist = artist
+    this.playQueue(artist.tracks)
+  }
+  playPlaylist(playlist: IPlaylist) {
+    this.artist = undefined
+    this.playQueue(playlist.tracks)
+  }
+  playSingleTrack(track: ITrack) {
+    this.artist = undefined
+    this.playTrack(track)
   }
   startPlaying() {
     this.audio.play()

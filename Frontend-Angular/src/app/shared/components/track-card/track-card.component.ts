@@ -16,7 +16,7 @@ export class TrackCardComponent implements OnInit {
   ngOnInit(): void { }
 
   playTrack(track: ITrack) {
-    this.playerService.playTrack(track)
+    this.playerService.playSingleTrack(track)
   }
 
 

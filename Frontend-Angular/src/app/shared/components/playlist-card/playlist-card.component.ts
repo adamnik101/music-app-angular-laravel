@@ -18,8 +18,8 @@ export class PlaylistCardComponent implements OnInit {
     console.log(this.playlist)
   }
 
-  playPlaylist(tracks : ITrack[]) {
-    this.playerService.queue = tracks
-    this.playerService.playQueue(tracks)
+  playPlaylist(playlist : IPlaylist) {
+    this.playerService.queue = playlist.tracks
+    this.playerService.playPlaylist(playlist)
   }
 }

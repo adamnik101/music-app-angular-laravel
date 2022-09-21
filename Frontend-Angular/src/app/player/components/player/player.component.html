@@ -7,7 +7,13 @@
       <span class="w4" [class.bar]="playerService.playing"></span>
     </div>
     <div class="player-image">
-      <img [src]="'assets/images/artists/'+ playerService.track.artists[0].cover" alt="player-image">
+      <ng-container *ngIf="playerService.artist">
+        <img [src]="'assets/images/artists/'+ playerService.artist.cover" alt="player-image">
+      </ng-container>
+      <ng-container *ngIf="!playerService.artist">
+        <img [src]="'assets/images/artists/'+ playerService.track.artists[0].cover" alt="player-image">
+      </ng-container>
+
     </div>
     <div class="player-text">
       <p>Now playing</p>
@@ -15,7 +21,13 @@
         <ng-container *ngIf="playerService.track.explicit">
           <mat-icon>explicit</mat-icon>
         </ng-container>
-        <p>{{playerService.track.name}} - {{playerService.track | owner}} {{playerService.track.artists | features : playerService.track : artists}}</p>
+        <ng-container *ngIf="playerService.artist != undefined">
+          <p>{{playerService.track.name}} - {{playerService.artist.artist}} {{[playerService.artist] | features : playerService.track : artists}}</p>
+        </ng-container>
+        <ng-container *ngIf="playerService.artist == undefined">
+          <p>{{playerService.track.name}} - {{playerService.track | owner}} {{playerService.track.artists | features : playerService.track : artists}}</p>
+        </ng-container>
+
       </div>
     </div>
   </div>
@@ -33,7 +45,7 @@
         </ng-container>
 
       </button>
-      <button mat-fab (click)="nextTrack()" [disabled]="(playerService.queue.length - playerService.queuePosition - 1) >= 1" mat-button>
+      <button mat-fab (click)="nextTrack()" [disabled]="!(playerService.queue.length - playerService.queuePosition - 1)" mat-button>
         <mat-icon >skip_next</mat-icon>
       </button>
     </div>

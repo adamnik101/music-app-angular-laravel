@@ -18,7 +18,7 @@ class PlaylistController extends Controller
         return Playlist::with('tracks.artists')->with('user')->where("id", '=', $id)->first();
     }
     public function getUserPlaylists($id) {
-        return Playlist::with('tracks')->with('user')->where('user_id', '=', $id)->get();
+        return Playlist::with('tracks.artists')->with('user')->where('user_id', '=', $id)->get();
     }
     public function add(PlaylistRequest $request) {
         if($request->validated()){
