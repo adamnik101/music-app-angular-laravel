@@ -33,3 +33,15 @@ Kredencijali za user logovanje su :
 user@gmail.com
 pass
 ````
+
+#Funkcionalnosti
+
+***USER***
+
+> Omoguceno pravljenje novih plejlisti i dodavanje pesama unutar istih, tako i brisanje plejlisti i pesama unutar
+
+***ADMIN***
+
+>Omoguceno dodavanje, izmena i brisanje (pesme i izvodjaci)
+
+
